@@ -12,15 +12,18 @@ public class HomePage extends PageBase{
         super(driver);
     }
 
-    @FindBy(xpath = "//div[@class='category-cards'] /div[6]")
-    WebElement bookStoreAppItem;
 
-    public BookStorePage clickBookStoreItem(){
+    //@FindBy(xpath = "//div[@class='category-cards'] /div[6]")
+    @FindBy(xpath = "//div[@class='category-cards']/div[.='Book Store Application']")
+    WebElement bookStoreApplicationBtn;
 
-        Actions actions = new Actions(driver);  // jump down
-        actions.sendKeys(Keys.PAGE_DOWN).build().perform();
 
-        bookStoreAppItem.click();
+    public BookStorePage getBookStore()  {
+
+        //clickWithAction(bookStoreApplicationBtn);
+        clickWithJSExecutor(bookStoreApplicationBtn,0,500);
         return new BookStorePage(driver);
     }
+
+
 }
