@@ -5,7 +5,7 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 
-public class HomePage extends PageBase{
+public class HomePage extends PageBase {
 
     public HomePage(WebDriver driver) {
         super(driver);
@@ -17,10 +17,10 @@ public class HomePage extends PageBase{
     WebElement bookStoreApplicationBtn;
 
 
-    public BookStorePage getBookStore()  {
+    public BookStorePage getBookStore() {
 
         //clickWithAction(bookStoreApplicationBtn);
-        clickWithJSExecutor(bookStoreApplicationBtn,0,500);
+        clickWithJSExecutor(bookStoreApplicationBtn, 0, 500);
         return new BookStorePage(driver);
     }
 
@@ -29,16 +29,24 @@ public class HomePage extends PageBase{
 
     public SidePanelPage getAlertsFrameAndWindows() {
 
-    clickWithJSExecutor(alertsFrameAndWindow,0,300);
+        clickWithJSExecutor(alertsFrameAndWindow, 0, 300);
         return new SidePanelPage(driver);
     }
 
 
-    @FindBy (xpath ="//div[@class='category-cards']/div[.='Widgets']")
+    @FindBy(xpath = "//div[@class='category-cards']/div[.='Widgets']")
     WebElement widgets;
 
     public SelectMenuPage getWidgets() {
-        clickWithJSExecutor(widgets,0,400);
+        clickWithJSExecutor(widgets, 0, 400);
         return new SelectMenuPage(driver);
+    }
+
+    @FindBy(xpath = "//div[@class='category-cards']/div[2]")  ///Forms
+    WebElement form;
+
+    public SidePanelPage getForms() {
+        clickWithJSExecutor(form, 0, 400);
+        return new SidePanelPage(driver);
     }
 }

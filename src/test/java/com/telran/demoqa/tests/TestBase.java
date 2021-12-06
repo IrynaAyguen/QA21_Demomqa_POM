@@ -13,10 +13,10 @@ import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.BeforeSuite;
 
 import java.lang.reflect.Method;
+import java.util.Arrays;
 import java.util.concurrent.TimeUnit;
 
 public class TestBase {
-
     //public WebDriver driver;
     public static EventFiringWebDriver driver;
 
@@ -41,8 +41,7 @@ public class TestBase {
 
     @BeforeMethod
     public void startTest(Method m, Object[] p) {
-        logger.info("Start test " + m.getName());
-        //+ " with data: " + Arrays.asList(p));
+        logger.info("Start test " + m.getName() + " with data: " + Arrays.asList(p));
     }
 
     @AfterMethod
