@@ -22,7 +22,7 @@ public class TestBase {
 
     Logger logger = LoggerFactory.getLogger(TestBase.class);
 
-    @BeforeSuite
+    @BeforeMethod
     public void setUp(){
         //driver = new ChromeDriver();
         driver = new EventFiringWebDriver(new ChromeDriver());
@@ -34,7 +34,7 @@ public class TestBase {
         driver.register(new MyListener());
     }
 
-    @AfterSuite (enabled = false)
+    @AfterMethod (enabled = false)
     public void  tearDown(){
         driver.quit();
     }

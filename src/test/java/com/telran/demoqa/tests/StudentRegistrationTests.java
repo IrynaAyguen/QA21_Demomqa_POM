@@ -22,43 +22,29 @@ public class StudentRegistrationTests extends TestBase{
     public void  fillStudentRegistrationTest(){
         new FormsPage(driver).fillPersonalData(StudentData.FIRST_NAME, StudentData.LAST_NAME, StudentData.E_MAIL,StudentData.PHONE)
                 .selectGender(StudentData.GENDER)
-                .typeOfDate(StudentData.B_DAY)
+              //  .typeOfDate(StudentData.B_DAY)
+                .chooseDate("December", "2021", "5")
                 .addSubject(StudentData.SUBJECTS)
                 .chooseHobbies(StudentData.HOBBIES)
-                .uploadFile(StudentData.FILE);
-//                .typeAddress(StudentData.ADDRESS)
-//                .inputState(StudentData.STATE)
-//                .inputCity(StudentData.CITY)
-//                .clickOnSubmitButton();
-//         Assert.assertTrue(new FormsPage(driver).getTitleFormDialog());
-//         new FormsPage(driver).closeSuccessDialog();
+                .uploadFile(StudentData.FILE)
+                .typeAddress(StudentData.ADDRESS)
+                .inputState(StudentData.STATE)
+                .inputCity(StudentData.CITY)
+                .clickOnSubmitButton();
+         Assert.assertTrue(new FormsPage(driver).getTitleFormDialog().contains("Thanks for submitting the form"));
+         new FormsPage(driver).closeSuccessDialog();
+
 
     }
 
-    @Test(dataProvider = "StudentRegistrationForm",dataProviderClass = DataProviders.class)
-
-    public void  fillStudentRegistrationFromDataProviderTest(String fName, String lName
-            , String eMail, String ph, String gender, String bDay
-            , String subjects
-            , String hobbies
-            , String file
-//            , String address, String state, String city
-    ) throws InterruptedException {
-
-        new FormsPage(driver).fillPersonalData(fName, lName, eMail,ph)
-                .selectGender(gender)
-                .typeOfDate(bDay)
-                .addSubjectForDataProvider(subjects)
-                .chooseHobbiesForDataProvider(hobbies)
-                .uploadFile(file)
-//                .typeAddress(address)
-//                .inputState(state)
-//                .inputCity(city)
-//                .clickOnSubmitButton()
-                ;
-//         Assert.assertTrue(new FormsPage(driver).getTitleFormDialog());
-//         new FormsPage(driver).closeSuccessDialog();
-        Thread.sleep(5000);
+    @Test(dataProviderClass = DataProviders.class, dataProvider = "UsingFile")
+    public void fillStudentRegFormWithDataProviderTest(String firstName, String lastName, String email,
+                                                       String phone, String birthDate, String file) {
+        new FormsPage(driver).fillPersonalData(firstName, lastName, email, phone)
+                .selectGender(StudentData.GENDER).typeOfDate(birthDate)
+                .addSubject(StudentData.SUBJECTS)
+                .chooseHobbies(StudentData.HOBBIES)
+                .uploadFile(file);
     }
-    
+
 }

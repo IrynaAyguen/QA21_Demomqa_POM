@@ -11,7 +11,7 @@ public class StudentData {
     public static final String[] HOBBIES = {"Sports","Music"};
     public static final String FILE = "C:/Tools/foto_lebenslauf.jpg";
     public static final String ADDRESS ="Tortuga";
-    public static final String STATE ="NRC";
+    public static final String STATE ="NCR";
     public static final String CITY ="Noida";
 
 }
