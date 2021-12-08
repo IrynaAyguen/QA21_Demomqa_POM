@@ -74,9 +74,9 @@ public class BrokenLinksForOtherWebSiteTests {
             httpURL.setConnectTimeout(5000);
             httpURL.connect();
             if (httpURL.getResponseCode() >= 400) {
-                System.out.println(linkUrl + " - " + httpURL.getResponseMessage() + " is  a broken link");
+                System.out.println(linkUrl + " - " + httpURL.getResponseCode() +" - " + httpURL.getResponseMessage() + " is  a broken link");
             } else {
-                System.out.println(linkUrl + " - " + httpURL.getResponseMessage());   //code<400
+                System.out.println(linkUrl + " - " + httpURL.getResponseCode() + " - " + httpURL.getResponseMessage());   //code<400
             }
         } catch (Exception e) {
             System.out.println(linkUrl + " - " + e.getMessage() + " ************ broken link");
