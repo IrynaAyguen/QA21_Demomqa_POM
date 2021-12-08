@@ -1,8 +1,8 @@
 package com.telran.demoqa.tests.bookstoreTests;
 
 import com.telran.demoqa.data.UserData;
-import com.telran.demoqa.pages.bookstorePages.BookStorePage;
 import com.telran.demoqa.pages.HomePage;
+import com.telran.demoqa.pages.bookstorePages.BookStorePage;
 import com.telran.demoqa.pages.bookstorePages.LoginPage;
 import com.telran.demoqa.tests.TestBase;
 import org.testng.annotations.BeforeMethod;

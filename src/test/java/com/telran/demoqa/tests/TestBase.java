@@ -16,7 +16,7 @@ import java.lang.reflect.Method;
 import java.util.Arrays;
 import java.util.concurrent.TimeUnit;
 
-public class TestBase {
+public class  TestBase {
     //public WebDriver driver;
     public static EventFiringWebDriver driver;
 
@@ -30,7 +30,8 @@ public class TestBase {
         driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
 
         //driver.get("https://demoqa.com/login");
-        driver.get("https://demoqa.com");
+        //driver.get("https://demoqa.com");
+        driver.get("https://javarush.ru/quests");
         driver.register(new MyListener());
     }
 

@@ -8,6 +8,7 @@ import java.util.Iterator;
 import java.util.List;
 
 public class DataProviders {
+    //domashka:  dataProvider  without file.CSV
     @DataProvider
     public Iterator<Object[]> StudentRegistrationForm() {
         List<Object[]> list = new ArrayList<>();
@@ -27,7 +28,7 @@ public class DataProviders {
     }
 
 
-
+    //from Irina:  dataProvider  with file.CSV
     @DataProvider
     public static Iterator<Object[]> UsingFile() throws IOException {
         BufferedReader in = new BufferedReader(new InputStreamReader(

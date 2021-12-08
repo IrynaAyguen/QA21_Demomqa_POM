@@ -24,7 +24,7 @@ public class DragAndDropPage extends PageBase{
         String text = dropHere.getText();
 
         if (text.equals("Dropped!")) {
-            System.out.println("Pass: Source is dropped to target as expected");
+            System.out.println("PASS: Source is dropped to target as expected");
         }else {
             System.out.println("FAIL: Source couldn't be dropped to target as expected");
         }
@@ -115,6 +115,15 @@ public class DragAndDropPage extends PageBase{
             System.out.println("*****Acceptable source couldn't be dropped to target");
         }
         return this;
+    }
+
+
+    @FindBy (xpath ="//h5[.='Elements']")
+    WebElement elements;
+
+    public SidePanelPage getElementsPage(){
+        clickWithJSExecutor(elements,0,400);
+        return new SidePanelPage(driver);
     }
 
 }
