@@ -87,8 +87,6 @@ public class BrokenLinksImagesPage extends PageBase {
                 System.out.println("ERROR");
             }
         }
-
-
         return this;
     }
 }

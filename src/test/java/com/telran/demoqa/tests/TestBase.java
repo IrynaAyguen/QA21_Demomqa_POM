@@ -30,8 +30,8 @@ public class  TestBase {
         driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
 
         //driver.get("https://demoqa.com/login");
-        //driver.get("https://demoqa.com");
-        driver.get("https://javarush.ru/quests");
+        driver.get("https://demoqa.com");
+
         driver.register(new MyListener());
     }
 

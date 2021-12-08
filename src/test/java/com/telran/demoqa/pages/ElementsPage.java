@@ -25,8 +25,8 @@ public class ElementsPage extends PageBase {
 
             WebElement element = driver.findElement(By.id("userName"));
 
-            System.out.println(element.getText() + "By text");
-            System.out.println(element.getAttribute("value") + "By value");
+            System.out.println(element.getText() + " By text");
+            System.out.println(element.getAttribute("value") + " By value");
         }
         return this;
     }
